@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+        <h1>Portfolio Tracker</h1>
+        {% if current_user.is_authenticated %}
+        <div>
+            <a class="btn btn-info mb-4" href="{{ url_for('account') }}">Account</a>
+        </div>
+        <div>
+            <a class="btn btn-info mb-4" href="{{ url_for('logout') }}">Logout</a>
+        </div>
+        {% else %}
+            <div>
+                <a class="btn btn-info mb-4" href="{{ url_for('register') }}">Register</a>
+            </div>
+            <div>
+                <a class="btn btn-info mb-4" href="{{ url_for('login') }}">Login</a>
+            </div>
+        {% endif %}
+        <div>
+            <a class="btn btn-info mb-4" href="{{ url_for('about') }}">About</a>
+        </div>
+{% endblock content %}
